@@ -1,0 +1,105 @@
+body {
+  margin: 0; padding: 0;
+  background: #f8fbf9;
+  font-family: 'EB Garamond', serif;
+  color: #6d7f71;
+  position: relative; overflow-x: hidden;
+}
+.contenedor-corazones {
+  position: fixed; left:0; top:0; width:100vw; height:100%; min-height:100vh;
+  pointer-events:none; z-index:2;
+}
+.portada {
+  width: 100vw; padding-top: 38px; text-align:center; position:relative;
+}
+.hojas-superior { max-width: 390px; width: 100%; margin-bottom: 26px; margin-top: 4px;}
+.subtitulo { display:block; font-family:'Montserrat',serif; font-size:1.25em; margin-top:0.6em; color:#9fb5a7; font-weight: 700;}
+.nombre-principal { font-family:'Great Vibes',cursive; font-size:2.8em; color:#70917d; margin:0.09em 0 0.22em 0; line-height:1em;}
+.amp { display:block;font-size:2em;color:#a1b7aa;font-family:'Great Vibes',cursive;}
+.music-controls { margin:1em auto 0.35em;}
+.music-btn { background:transparent; border:none; cursor:pointer;}
+.music-btn img { width:55px; height:55px; border-radius:100px;}
+.frase-impacto { font-family:'Montserrat',serif; color:#759586; font-size:1.17em; margin-top:0.4em; margin-bottom:1.05em;}
+
+.cuenta-contenedor { margin-bottom: 2em; }
+.cuenta-label { color:#99b39e; margin-bottom:0.3em; }
+#cuenta-regresiva {
+  font-family:'Montserrat',serif; font-weight:bold; background:#e4edeb;
+  color:#598069; border-radius: 18px; display:inline-block; font-size:2.1em;
+  padding:0.19em 1.35em; letter-spacing:0.16em; margin:0.3em 0;
+}
+.etiquetas-contador { color: #7B9366; font-size: 1em; margin-bottom:0.6em; letter-spacing:0.07em; }
+
+.contenedor-boda {
+  background: #fff;
+  max-width: 500px;
+  margin: 0 auto;
+  border-radius: 18px;
+  box-shadow: 0 4px 30px #a3adab18;
+  padding: 1.5em 1.1em 2em 1.1em;
+  position: relative;
+  top: -9px;
+}
+.seccion-datos { text-align:center; margin-top:18px;}
+.dato-boda { margin-bottom:0.6em;}
+.fecha-resaltada { background:#e4edeb; border-radius:12px; display:inline-block; padding:0.4em 1.3em; color:#70917d;
+ font-weight:bold; font-size:1.32em; box-shadow:0 1px 10px #e0ede6aa; margin-bottom:0.3em; }
+.doble-col { display: flex; justify-content: space-between; gap: 2em; margin-bottom: 0.9em; }
+.doble-col > div { flex: 1; min-width: 120px; }
+.ceremonia-bloc, .recepcion-bloc { text-align:center; margin-bottom:1.2em;}
+.ceremonia-bloc h2, .recepcion-bloc h2 { color: #5e7c6b; font-family:'EB Garamond',serif; font-weight:700; letter-spacing:0.08em; }
+.ceremonia-bloc p, .recepcion-bloc p { margin: 0.1em 0 0.1em 0; }
+.mapa {
+  background: #ccdec2; color:#47564d; text-decoration:none; border-radius:18px;
+  padding:0.57em 1.07em; font-size:1.03em; display:inline-block; margin-top:0.7em; font-weight:600; transition:background .2s;
+}
+.mapa:hover { background:#aac795; }
+.confirmar-botonera { display:flex; justify-content: center; gap:1.1em; margin:1.12em auto 1.2em auto; flex-wrap:wrap; }
+.confirmar-botonera p { flex:100%; margin:0 0 0.44em 0;}
+.boton-confirmar {
+  background:#a1b7aa; color:#436458; border-radius:18px; padding:0.7em 1.5em; font-size:1em;
+  text-decoration:none; font-family:'Montserrat',sans-serif; font-weight:700; transition:background .2s; margin-bottom:0.6em;
+}
+.boton-confirmar:hover { background:#84a18b; color:#fff;}
+.galeria { margin:1.85em 0 1.4em 0; text-align:center;}
+.galeria h2 { color:#7b9683; font-family:'Montserrat',serif; font-size:1.5em;}
+.galeria-contenedor { display:flex; align-items:center; justify-content:center; gap:1.2em; margin-bottom:0.5em;}
+.galeria-contenedor img { max-width:300px;max-height:210px; border-radius:14px;box-shadow:0 1px 10px #0001;width:100%;height:auto;object-fit:cover;}
+.galeria-anterior, .galeria-siguiente {
+  background: #aeccbf; color:#fff; border:none; font-size:2em; border-radius:50%; width:40px; height:40px; cursor:pointer;
+  transition:background .2s;
+}
+.galeria-thumbs { display:flex; gap:1em; justify-content:center; margin-top:0.5em;}
+.galeria-thumbs img { width:42px; height:30px; object-fit:cover; border-radius:7px; cursor:pointer; opacity:0.7; transition:opacity .2s,border .2s;}
+.galeria-thumbs img:hover { opacity:1; border:2px solid #7B1F38; }
+.frases-esposos { text-align:center; margin-bottom:1.7em;}
+.frases-esposos h2 { color:#5e7c6b; font-family:'Montserrat',serif;font-size:1.29em;}
+.frases-esposos blockquote { font-family:'EB Garamond',serif; color:#79957d;font-size:1em; margin:1em auto 0.36em;
+  background:#f3f9f7; padding:0.7em 1.1em; border-radius:14px; box-shadow:0 .5px 6px #ddd6dc80; max-width:520px;}
+
+.final-boda{margin-top:1.2em;text-align:center;}
+.dress-elegante{margin:1.05em auto 0.6em auto;color:#6f8877;font-size:1.08em;font-family:'Montserrat',serif;}
+.icono-elegante{font-size:1.36em;margin-right:4px;vertical-align:middle;}
+.regalos{
+  margin-top:0.9em;background:#f1f7f3;border-radius:14px;font-size:1.07em;color:#5f716e;
+  padding:0.9em 0.7em;letter-spacing:0.03em;box-shadow:0 1.2px 7px #e0ede6a4;text-align:center;
+}
+@media (max-width:720px){
+ .contenedor-boda{padding:1.1em 0.04em;}
+ .galeria-contenedor img{max-width:94vw;max-height:32vw;}
+}
+@media (max-width:540px){
+ .doble-col{ flex-direction:column; gap:0.5em;}
+ .contenedor-boda{ box-shadow:none; border-radius:0; top:1px;}
+}
+
+/* Animaciones reveal Corazones */
+.reveal { opacity:0; transform: translateY(36px); transition:opacity 0.79s,transform 0.79s;}
+.reveal.active { opacity:1; transform:translateY(0);}
+.corazon-float {
+  position: absolute;
+  width: 30px; height: 30px;
+  pointer-events:none; opacity: 0.75;
+  animation: flotar 7s linear forwards;
+}
+@keyframes flotar { to { transform:translateY(-98vh) scale(1.3) rotate(360deg); opacity:0; } }
