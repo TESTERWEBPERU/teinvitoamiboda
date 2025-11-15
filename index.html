@@ -4,25 +4,29 @@
   <meta charset="UTF-8">
   <title>Stefanny & Antony - Invitación de Boda</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <!-- Tipografía: formal para todo, caligrafía solo nombres principales -->
+  <!-- Formal/Moderna: Montserrat/EB Garamond (todo menos nombres), Great Vibes (nombres) -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=EB+Garamond:wght@500;700&family=Great+Vibes&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
   <div class="contenedor-corazones"></div>
-
+  
+  <!-- Decoraciones externas arriba -->
+  <div class="decoracion-externa superior">
+    <img src="NOMBRE_HOJAS_SUPERIOR.png" class="decoracion-png" alt="Hojas decorativas">
+  </div>
+  
   <header class="portada reveal">
-    <img src="NOMBRE_HOJAS_SUPERIOR.png" alt="Decoración hojas" class="hojas-superior">
+    <span class="subtitulo">¡Nos Casamos!</span>
+    <h1 class="nombre-principal">Stefanny</h1>
+    <span class="amp">&amp;</span>
+    <h1 class="nombre-principal">Antony</h1>
     <div class="music-controls">
       <button id="play-music" class="music-btn">
         <img src="NOMBRE_GIF_PLAY.gif" alt="Play" />
       </button>
       <audio id="background-music" src="NOMBRE_AUDIO.mp3" loop></audio>
     </div>
-    <span class="subtitulo">¡Nos Casamos!</span>
-    <h1 class="nombre-principal">Stefanny</h1>
-    <span class="amp">&amp;</span>
-    <h1 class="nombre-principal">Antony</h1>
     <p class="frase-impacto">"Nuestro anhelo se hace realidad: compartir este gran día contigo."</p>
     <div class="cuenta-contenedor reveal">
       <div class="cuenta-label">Faltan...</div>
@@ -39,7 +43,6 @@
   </header>
 
   <main class="contenedor-boda">
-
     <section class="seccion-datos reveal">
       <div class="dato-boda">
         <strong>Fecha:</strong>
@@ -66,7 +69,7 @@
         </div>
       </div>
     </section>
-    
+
     <section class="ceremonia-bloc reveal">
       <h2>Ceremonia Religiosa</h2>
       <p><strong>Hora:</strong> 4:00 p.m.</p>
@@ -79,37 +82,37 @@
          Av. Los Gallinazos 922, Puente Piedra</p>
       <a href="https://goo.gl/maps/tu-mapa" class="mapa" target="_blank">Ver mapa</a>
     </section>
-    
+
     <section class="confirmar-botonera reveal">
       <p><strong>Confirma tu asistencia</strong></p>
       <a class="boton-confirmar" href="https://wa.me/51999999999?text=Hola+confirmo+asistencia+boda+Stefanny" target="_blank">Con la Novia</a>
       <a class="boton-confirmar" href="https://wa.me/51988888888?text=Hola+confirmo+asistencia+boda+Antony" target="_blank">Con el Novio</a>
     </section>
-    
+
     <section class="galeria reveal">
       <h2>Nuestros recuerdos</h2>
       <div class="galeria-contenedor">
         <button class="galeria-anterior">&#10094;</button>
-        <img id="galeria-imagen" src="FOTO_1.jpg" alt="Galería Boda">
+        <img id="galeria-imagen" src="F1.jpg" alt="Galería Boda">
         <button class="galeria-siguiente">&#10095;</button>
       </div>
-      <div class="galeria-thumbs">
-        <img src="FOTO_1.jpg" alt="" onclick="cambiarImagen(0)">
-        <img src="FOTO_2.jpg" alt="" onclick="cambiarImagen(1)">
-        <img src="FOTO_3.jpg" alt="" onclick="cambiarImagen(2)">
+      <div class="galeria-thumbs-wrap">
+        <button class="thumb-anterior">&#10094;</button>
+        <div class="galeria-thumbs" id="galeria-thumbs"></div>
+        <button class="thumb-siguiente">&#10095;</button>
       </div>
     </section>
-    
+
     <section class="frases-esposos reveal">
       <h2>Dedicatorias</h2>
       <blockquote>“El amor no consiste en mirarse el uno al otro, sino en mirar juntos en la misma dirección.”</blockquote>
       <blockquote>“Más valen dos que uno, porque obtienen más fruto de su esfuerzo. Si caen, el uno levanta al otro.” - Eclesiastés 4:9-10</blockquote>
       <blockquote>“Las muchas aguas no podrán apagar el amor, ni lo ahogarán los ríos.” - Cantar de los Cantares 8:7</blockquote>
     </section>
-    
+
     <section class="final-boda reveal">
       <div class="dress-elegante">
-        <span class="icono-elegante">&#128089;</span>
+        <img src="NOMBRE_ICONO_DRESSCODE.png" alt="Dress Code" class="img-dresscode" />
         Dress code: <strong>Elegante</strong>
       </div>
       <div class="regalos">
@@ -119,6 +122,12 @@
       </div>
     </section>
   </main>
+
+  <!-- Decoraciones externas abajo -->
+  <div class="decoracion-externa inferior">
+    <img src="DECORACION_EXTRA_INFERIOR1.png" class="decoracion-png" alt="Flor decorativa">
+    <img src="DECORACION_EXTRA_INFERIOR2.png" class="decoracion-png" alt="Hoja decorativa">
+  </div>
 
   <script src="contador.js"></script>
   <script src="musica.js"></script>
