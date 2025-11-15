@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Stefanny & Antony - Invitación de Boda</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <!-- Tipografía: formal para todo, caligrafía solo nombres principales -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=EB+Garamond:wght@500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <div class="contenedor-corazones"></div>
+
+  <header class="portada reveal">
+    <img src="NOMBRE_HOJAS_SUPERIOR.png" alt="Decoración hojas" class="hojas-superior">
+    <div class="music-controls">
+      <button id="play-music" class="music-btn">
+        <img src="NOMBRE_GIF_PLAY.gif" alt="Play" />
+      </button>
+      <audio id="background-music" src="NOMBRE_AUDIO.mp3" loop></audio>
+    </div>
+    <span class="subtitulo">¡Nos Casamos!</span>
+    <h1 class="nombre-principal">Stefanny</h1>
+    <span class="amp">&amp;</span>
+    <h1 class="nombre-principal">Antony</h1>
+    <p class="frase-impacto">"Nuestro anhelo se hace realidad: compartir este gran día contigo."</p>
+    <div class="cuenta-contenedor reveal">
+      <div class="cuenta-label">Faltan...</div>
+      <div id="cuenta-regresiva">
+        <span id="dias">00</span> :
+        <span id="horas">00</span> :
+        <span id="minutos">00</span> :
+        <span id="segundos">00</span>
+      </div>
+      <div class="etiquetas-contador">
+        <span>DÍAS</span>  <span>HORAS</span>  <span>MINUTOS</span>  <span>SEGUNDOS</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="contenedor-boda">
+
+    <section class="seccion-datos reveal">
+      <div class="dato-boda">
+        <strong>Fecha:</strong>
+        <span class="fecha-resaltada">7 Febrero 2026</span>
+      </div>
+      <div class="doble-col">
+        <div>
+          <strong>Padres de la Novia:</strong>
+          <div>Daniel Sánchez Canario<br>Geovana Jara Fernández</div>
+        </div>
+        <div>
+          <strong>Padres del Novio:</strong>
+          <div>Catalina Baltazar Castañeda<br>Javier Garay Berrocal (†)</div>
+        </div>
+      </div>
+      <div class="doble-col">
+        <div>
+          <strong>Padrinos Religioso:</strong>
+          <div>Geovana Jara Fernández<br>Juan Carlos Pingos Chuquipiondo</div>
+        </div>
+        <div>
+          <strong>Padrinos de Civil:</strong>
+          <div>Geovana Jara Fernández<br>Juan Carlos Pingos Chuquipiondo</div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="ceremonia-bloc reveal">
+      <h2>Ceremonia Religiosa</h2>
+      <p><strong>Hora:</strong> 4:00 p.m.</p>
+      <p>Parroquia San Conrado, Los Olivos</p>
+    </section>
+    <section class="recepcion-bloc reveal">
+      <h2>Recepción</h2>
+      <p><strong>Hora:</strong> 6:00 p.m.</p>
+      <p>"Piscina Las Palmeras - Puente Piedra"<br>
+         Av. Los Gallinazos 922, Puente Piedra</p>
+      <a href="https://goo.gl/maps/tu-mapa" class="mapa" target="_blank">Ver mapa</a>
+    </section>
+    
+    <section class="confirmar-botonera reveal">
+      <p><strong>Confirma tu asistencia</strong></p>
+      <a class="boton-confirmar" href="https://wa.me/51999999999?text=Hola+confirmo+asistencia+boda+Stefanny" target="_blank">Con la Novia</a>
+      <a class="boton-confirmar" href="https://wa.me/51988888888?text=Hola+confirmo+asistencia+boda+Antony" target="_blank">Con el Novio</a>
+    </section>
+    
+    <section class="galeria reveal">
+      <h2>Nuestros recuerdos</h2>
+      <div class="galeria-contenedor">
+        <button class="galeria-anterior">&#10094;</button>
+        <img id="galeria-imagen" src="FOTO_1.jpg" alt="Galería Boda">
+        <button class="galeria-siguiente">&#10095;</button>
+      </div>
+      <div class="galeria-thumbs">
+        <img src="FOTO_1.jpg" alt="" onclick="cambiarImagen(0)">
+        <img src="FOTO_2.jpg" alt="" onclick="cambiarImagen(1)">
+        <img src="FOTO_3.jpg" alt="" onclick="cambiarImagen(2)">
+      </div>
+    </section>
+    
+    <section class="frases-esposos reveal">
+      <h2>Dedicatorias</h2>
+      <blockquote>“El amor no consiste en mirarse el uno al otro, sino en mirar juntos en la misma dirección.”</blockquote>
+      <blockquote>“Más valen dos que uno, porque obtienen más fruto de su esfuerzo. Si caen, el uno levanta al otro.” - Eclesiastés 4:9-10</blockquote>
+      <blockquote>“Las muchas aguas no podrán apagar el amor, ni lo ahogarán los ríos.” - Cantar de los Cantares 8:7</blockquote>
+    </section>
+    
+    <section class="final-boda reveal">
+      <div class="dress-elegante">
+        <span class="icono-elegante">&#128089;</span>
+        Dress code: <strong>Elegante</strong>
+      </div>
+      <div class="regalos">
+        <strong>Regalos:</strong> Stefanny Alexandra Sánchez Jara <br>
+        Nº de cuenta: <strong>19132797157039 BCP</strong><br>
+        interbancaria: <strong>00219113279715703951</strong>
+      </div>
+    </section>
+  </main>
+
+  <script src="contador.js"></script>
+  <script src="musica.js"></script>
+  <script src="galeria.js"></script>
+  <script src="scrollreveal.js"></script>
+  <script src="corazones.js"></script>
+</body>
+</html>
