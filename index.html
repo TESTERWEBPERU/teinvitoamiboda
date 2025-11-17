@@ -4,18 +4,17 @@
   <meta charset="UTF-8">
   <title>Stefanny & Antony - Invitación de Boda</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <!-- Formal/Moderna: Montserrat/EB Garamond (todo menos nombres), Great Vibes (nombres) -->
+  <!-- Fuentes: Montserrat/EB Garamond formal, Great Vibes para nombres -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=EB+Garamond:wght@500;700&family=Great+Vibes&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
   <div class="contenedor-corazones"></div>
-  
   <!-- Decoraciones externas arriba -->
   <div class="decoracion-externa superior">
     <img src="NOMBRE_HOJAS_SUPERIOR.png" class="decoracion-png" alt="Hojas decorativas">
+    <!-- ...más imágenes si quieres... -->
   </div>
-  
   <header class="portada reveal">
     <span class="subtitulo">¡Nos Casamos!</span>
     <h1 class="nombre-principal">Stefanny</h1>
@@ -41,7 +40,6 @@
       </div>
     </div>
   </header>
-
   <main class="contenedor-boda">
     <section class="seccion-datos reveal">
       <div class="dato-boda">
@@ -69,7 +67,6 @@
         </div>
       </div>
     </section>
-
     <section class="ceremonia-bloc reveal">
       <h2>Ceremonia Religiosa</h2>
       <p><strong>Hora:</strong> 4:00 p.m.</p>
@@ -80,20 +77,27 @@
       <p><strong>Hora:</strong> 6:00 p.m.</p>
       <p>"Piscina Las Palmeras - Puente Piedra"<br>
          Av. Los Gallinazos 922, Puente Piedra</p>
-      <a href="https://goo.gl/maps/tu-mapa" class="mapa" target="_blank">Ver mapa</a>
+      <a href="https://goo.gl/maps/tu-mapa" class="mapa" target="_blank">
+        <img src="ICONO_MAPA.svg" class="btn-icono" alt="Ubicación">
+        Ver mapa
+      </a>
     </section>
-
     <section class="confirmar-botonera reveal">
       <p><strong>Confirma tu asistencia</strong></p>
-      <a class="boton-confirmar" href="https://wa.me/51999999999?text=Hola+confirmo+asistencia+boda+Stefanny" target="_blank">Con la Novia</a>
-      <a class="boton-confirmar" href="https://wa.me/51988888888?text=Hola+confirmo+asistencia+boda+Antony" target="_blank">Con el Novio</a>
+      <a class="boton-confirmar" href="https://wa.me/51999999999?text=Hola+confirmo+asistencia+boda+Stefanny" target="_blank">
+        <img src="ICONO_WHATSAPP_NOVIA.svg" class="btn-icono" alt="WhatsApp">
+        Con la Novia
+      </a>
+      <a class="boton-confirmar" href="https://wa.me/51988888888?text=Hola+confirmo+asistencia+boda+Antony" target="_blank">
+        <img src="ICONO_WHATSAPP_NOVIO.svg" class="btn-icono" alt="WhatsApp">
+        Con el Novio
+      </a>
     </section>
-
     <section class="galeria reveal">
       <h2>Nuestros recuerdos</h2>
       <div class="galeria-contenedor">
         <button class="galeria-anterior">&#10094;</button>
-        <img id="galeria-imagen" src="f1.jpg" alt="Galería Boda">
+        <img id="galeria-imagen" src="F1.jpg" alt="Galería Boda" onclick="abrirLightbox()" />
         <button class="galeria-siguiente">&#10095;</button>
       </div>
       <div class="galeria-thumbs-wrap">
@@ -102,33 +106,35 @@
         <button class="thumb-siguiente">&#10095;</button>
       </div>
     </section>
-
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox-bg" onclick="cerrarLightbox()">
+      <img id="lightbox-img" src="F1.jpg" alt="Foto grande" />
+      <button class="lightbox-close" onclick="cerrarLightbox();event.stopPropagation();">&times;</button>
+    </div>
     <section class="frases-esposos reveal">
       <h2>Dedicatorias</h2>
       <blockquote>“El amor no consiste en mirarse el uno al otro, sino en mirar juntos en la misma dirección.”</blockquote>
       <blockquote>“Más valen dos que uno, porque obtienen más fruto de su esfuerzo. Si caen, el uno levanta al otro.” - Eclesiastés 4:9-10</blockquote>
       <blockquote>“Las muchas aguas no podrán apagar el amor, ni lo ahogarán los ríos.” - Cantar de los Cantares 8:7</blockquote>
     </section>
-
     <section class="final-boda reveal">
       <div class="dress-elegante">
         <img src="NOMBRE_ICONO_DRESSCODE.png" alt="Dress Code" class="img-dresscode" />
         Dress code: <strong>Elegante</strong>
       </div>
       <div class="regalos">
+        <img src="ICONO_REGALO.svg" class="btn-icono" alt="Regalo">
         <strong>Regalos:</strong> Stefanny Alexandra Sánchez Jara <br>
         Nº de cuenta: <strong>19132797157039 BCP</strong><br>
         interbancaria: <strong>00219113279715703951</strong>
       </div>
     </section>
   </main>
-
   <!-- Decoraciones externas abajo -->
   <div class="decoracion-externa inferior">
     <img src="DECORACION_EXTRA_INFERIOR1.png" class="decoracion-png" alt="Flor decorativa">
-    <img src="DECORACION_EXTRA_INFERIOR2.png" class="decoracion-png" alt="Hoja decorativa">
+    <!-- ...más imágenes si quieres... -->
   </div>
-
   <script src="contador.js"></script>
   <script src="musica.js"></script>
   <script src="galeria.js"></script>

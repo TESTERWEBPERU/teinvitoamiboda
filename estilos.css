@@ -28,6 +28,8 @@ body {
 .music-controls { margin:1em auto 0.35em;}
 .music-btn { background:transparent; border:none; cursor:pointer;}
 .music-btn img { width:55px; height:55px; border-radius:100px;}
+.whatsapp { background:transparent; border:none; cursor:pointer;}
+.whatsapp img { width:18px; height:18px; border-radius:100px;}
 .frase-impacto { font-family:'Montserrat',serif; color:#759586; font-size:1.17em; margin-top:0.4em; margin-bottom:1.05em;}
 .cuenta-contenedor { margin-bottom: 2em; }
 .cuenta-label { color:#99b39e; margin-bottom:0.3em; }
@@ -118,3 +120,83 @@ body {
   animation: flotar 7s linear forwards;
 }
 @keyframes flotar { to { transform:translateY(-98vh) scale(1.3) rotate(360deg); opacity:0; } }
+.btn-icono {
+  height: 1.3em;
+  margin-right: 0.65em;
+  vertical-align: middle;
+  display: inline-block;
+  filter: drop-shadow(0px 0px 2px #9bd58ff2);
+  transition: transform .15s;
+}
+.boton-confirmar, .mapa {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  position: relative;
+  cursor: pointer;
+}
+.boton-confirmar:hover, .mapa:hover {
+  transform: scale(1.06);
+  filter: brightness(1.10);
+  background: #84a18b;
+  color: #fff;
+}
+.boton-confirmar:active, .mapa:active {
+  filter: brightness(0.95);
+  transform: scale(0.97);
+}
+.regalos .btn-icono {
+  margin-bottom: -4px;
+  margin-right: 0.5em;
+}
+
+.galeria-contenedor img {
+  width: 100%;
+  height: clamp(200px, 34vw, 350px);
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: 14px;
+  background: #e0ede6;
+  cursor: pointer;
+}
+.galeria-contenedor img:hover { box-shadow: 0 0 0 4px #bfdacc44; }
+
+.lightbox-bg {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(12,23,25,0.94);
+  z-index: 30;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.lightbox-bg.active {
+  display: flex;
+  animation: lightboxIn 0.4s cubic-bezier(.47,1.64,.41,.8);
+}
+@keyframes lightboxIn { from { opacity:0; } to { opacity:1; } }
+#lightbox-img {
+  max-width: 96vw;
+  max-height: 88vh;
+  border-radius: 14px;
+  background: #e0ede6;
+  margin: 0 auto;
+  object-fit: contain;
+  box-shadow: 0 4px 32px #0009;
+}
+.lightbox-close {
+  position: absolute;
+  top: 22px;
+  right: 34px;
+  font-size: 2.5em;
+  background: none;
+  border: none;
+  color: #eee;
+  cursor: pointer;
+  z-index: 40;
+  opacity: 0.85;
+  transition: opacity .15s;
+}
+.lightbox-close:hover { opacity: 1; }

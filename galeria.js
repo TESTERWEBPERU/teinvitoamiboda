@@ -1,11 +1,12 @@
-const imagenesGaleria = Array.from({length: 19}, (_,i)=>`f${i+1}.jpg`);
+const imagenesGaleria = Array.from({length: 19}, (_,i)=>`F${i+1}.jpg`);
 let indiceActual = 0;
-let thumbOffset = 0; // Para el slider de thumbs
+let thumbOffset = 0;
 
 const mostrarImagen = (indIce) => {
   const imgPrincipal = document.getElementById('galeria-imagen');
   if (imagenesGaleria[indIce]) {
     imgPrincipal.src = imagenesGaleria[indIce];
+    imgPrincipal.setAttribute('data-indice', indIce);
     indiceActual = indIce;
     document.querySelectorAll('#galeria-thumbs img').forEach((thumb, i) => {
       thumb.classList.toggle('active', i+thumbOffset === indiceActual);
@@ -49,4 +50,29 @@ document.querySelector('.thumb-siguiente').onclick = ()=>{
 window.onload = () => {
   mostrarImagen(0);
   renderThumbnails();
+  document.addEventListener('keydown', e=>{
+    if(document.getElementById('lightbox').classList.contains('active') && (e.key==="Escape"||e.key==="Esc")) cerrarLightbox();
+    if(document.getElementById('lightbox').classList.contains('active')) {
+      if(e.key==="ArrowRight") avanzarLightbox(1);
+      if(e.key==="ArrowLeft") avanzarLightbox(-1);
+    }
+  });
 };
+
+function abrirLightbox() {
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightbox-img');
+  lb.classList.add('active');
+  lbImg.src = imagenesGaleria[indiceActual];
+}
+function cerrarLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+}
+function avanzarLightbox(dir) {
+  let nuevo = indiceActual + dir;
+  if(nuevo < 0) nuevo = imagenesGaleria.length-1;
+  if(nuevo >= imagenesGaleria.length) nuevo=0;
+  mostrarImagen(nuevo);
+  document.getElementById('lightbox-img').src = imagenesGaleria[nuevo];
+}
+document.getElementById('lightbox-img').onclick = e => e.stopPropagation();
