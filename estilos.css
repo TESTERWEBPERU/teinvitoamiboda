@@ -1,9 +1,16 @@
 body {
-  margin: 0; padding: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   background: #f8fbf9;
   font-family: 'EB Garamond', serif;
   color: #6d7f71;
-  position: relative; overflow-x: hidden;
+  width: 100vw;
+  min-width: 100vw;
+  overflow-x: hidden;
+}
+main, .contenedor-boda, section, .frases-esposos, .final-boda, .ceremonia-bloc, .recepcion-bloc {
+  text-align: center;
 }
 .decoracion-externa {
   width: 100vw; text-align: center;
@@ -19,12 +26,23 @@ body {
   pointer-events: none;
 }
 .fotoportada {
-  height: 320px;
-  margin: 0 20px;
-  align-content: center;
-  vertical-align: middle;
-  pointer-events: none;
+  width: 100vw;
+  max-width: 100vw;
+  min-width: 100vw;
+  display: block;
+  height: auto;
+  max-height: 420px;   /* Puedes ajustar este valor */
+  object-fit: cover;
+  margin: 0 auto 1em auto;
+  border-radius: 0;
+  box-shadow: none;
 }
+@media (max-width: 650px) {
+  .fotoportada {
+    max-height: 240px;
+  }
+}
+
 .contenedor-corazones {
   position: fixed; left:0; top:0; width:100vw; height:100%; min-height:100vh; pointer-events:none; z-index:2;
 }
@@ -53,12 +71,36 @@ body {
 }
 @keyframes palpitar { 50% { transform: scale(1.10);} }
 
-.contenedor-boda { background: #fff; max-width: 500px; margin: 0 auto; border-radius: 18px; box-shadow: 0 4px 30px #a3adab18;
-  padding: 1.5em 1.1em 2.5em 1.1em; position: relative; top: -9px;}
+.contenedor-boda {
+  background: #fff;
+  max-width: 490px;
+  width: 95vw;
+  margin: 0 auto;
+  border-radius: 18px;
+  box-shadow: 0 4px 30px #a3adab18;
+  padding: 1.5em 1.2em 2.5em 1.2em;
+  position: relative;
+  top: -9px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
 .seccion-datos { text-align:center; margin-top:18px;}
 .dato-boda { margin-bottom:0.6em;}
-.doble-col { display: flex; justify-content: space-between; gap: 2em; margin-bottom: 0.9em; }
-.doble-col > div { flex: 1; min-width: 120px; }
+.doble-col {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.2em;
+  flex-wrap: wrap;
+  margin-bottom: 0.9em;
+  text-align: left;
+}
+.doble-col > div {
+  flex: 1 1 170px;
+  min-width: 130px;
+  max-width: 210px;
+}
 .ceremonia-bloc, .recepcion-bloc { text-align:center; margin-bottom:1.2em;}
 .ceremonia-bloc h2, .recepcion-bloc h2 { color: #5e7c6b; font-family:'Montserrat',serif; font-weight:700; letter-spacing:0.09em; }
 .ceremonia-bloc p, .recepcion-bloc p { margin: 0.1em 0 0.1em 0; }
@@ -83,8 +125,25 @@ body {
   border-radius: 14px;
   background: #e0ede6;
 }
-@media (max-width:700px){
-  .galeria-contenedor img{ width:98vw; height:32vw;}
+
+@media (max-width: 700px) {
+  .contenedor-boda {
+    width: 99vw;
+    max-width: none;
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+  }
+  .doble-col {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6em;
+    text-align: center;
+  }
+  .doble-col > div {
+    min-width: 0;
+    max-width: none;
+    width: 100%;
+  }
 }
 .galeria-thumbs-wrap { display: flex; align-items: center; justify-content: center; gap: 0.5em; }
 .galeria-thumbs {
