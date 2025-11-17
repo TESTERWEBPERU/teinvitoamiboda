@@ -26,23 +26,27 @@ main, .contenedor-boda, section, .frases-esposos, .final-boda, .ceremonia-bloc, 
   pointer-events: none;
 }
 .fotoportada {
-  width: 100vw;
-  max-width: 100vw;
-  min-width: 100vw;
+  width: 100%;
+  max-width: 100%;
   display: block;
   height: auto;
-  max-height: 420px;   /* Puedes ajustar este valor */
   object-fit: cover;
-  margin: 0 auto 1em auto;
+  margin: 0;
   border-radius: 0;
   box-shadow: none;
 }
-@media (max-width: 650px) {
+/* Opcional: para limitar la altura máxima en desktop */
+@media (min-width: 601px) {
   .fotoportada {
-    max-height: 240px;
+    max-height: 420px;
   }
 }
-
+/* Opcional: en móvil una altura más baja */
+@media (max-width: 600px) {
+  .fotoportada {
+    max-height: 210px;
+  }
+}
 .contenedor-corazones {
   position: fixed; left:0; top:0; width:100vw; height:100%; min-height:100vh; pointer-events:none; z-index:2;
 }
