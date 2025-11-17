@@ -121,13 +121,20 @@ body {
 }
 @keyframes flotar { to { transform:translateY(-98vh) scale(1.3) rotate(360deg); opacity:0; } }
 .btn-icono {
-  height: 1.3em;
-  margin-right: 0.65em;
+  width: 15px !important;
+  height: 15px !important;
+  min-width: 15px !important;
+  min-height: 15px !important;
+  max-width: 15px !important;
+  max-height: 15px !important;
+  margin-right: 0.55em;
+  margin-bottom: -2px;
   vertical-align: middle;
   display: inline-block;
-  filter: drop-shadow(0px 0px 2px #9bd58ff2);
-  transition: transform .15s;
+  object-fit: contain;
 }
+.btn-icono svg { width: 100%; height: 100%; }
+
 .boton-confirmar, .mapa {
   display: inline-flex;
   align-items: center;
