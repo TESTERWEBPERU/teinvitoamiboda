@@ -1,4 +1,4 @@
-const imagenesGaleria = Array.from({length: 19}, (_,i)=>`F${i+1}.jpg`);
+const imagenesGaleria = Array.from({length: 19}, (_,i)=>`f${i+1}.jpg`);
 let indiceActual = 0;
 let thumbOffset = 0;
 
@@ -76,3 +76,4 @@ function avanzarLightbox(dir) {
   document.getElementById('lightbox-img').src = imagenesGaleria[nuevo];
 }
 document.getElementById('lightbox-img').onclick = e => e.stopPropagation();
+
