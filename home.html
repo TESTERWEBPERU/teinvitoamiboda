@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boda de Stefanny & Antony</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        :root {
+            /* Colores extraídos del estilo del PDF */
+            --primary-blue: #A4C8E1; /* El celeste de los bordes/manchas */
+            --text-dark: #333333;    /* Color del texto */
+            --text-light: #666666;
+            --bg-color: #ffffff;
+            --font-main: 'Montserrat', sans-serif;
+            --font-title: 'Playfair Display', serif; /* Para los nombres grandes */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        /* Contenedor principal limitado para que no se estire demasiado en PC */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            position: relative;
+        }
+
+        /* --- SECCIÓN DE FOTO DE PORTADA --- */
+        .hero-section {
+            position: relative;
+            width: 100%;
+            /* Espacio para que no se pegue al borde superior si lo deseas */
+            margin-top: 0; 
+        }
+
+        /* La foto de la pareja */
+        .main-photo {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            /* Altura máxima para que no ocupe 3 pantallas en PC */
+            max-height: 80vh; 
+        }
+
+        /* Los bordes decorativos (arriba y abajo de la foto) */
+        .deco-border {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            left: 0;
+            z-index: 10;
+            /* Esto hace que la imagen del borde se ajuste al ancho */
+        }
+
+        .border-top {
+            top: -1px; /* Ajuste fino para tapar el corte */
+        }
+
+        .border-bottom {
+            bottom: -5px; /* Ajuste fino para tapar el corte */
+        }
+
+        /* --- TEXTOS --- */
+        .header-text {
+            padding: 40px 20px;
+        }
+
+        .pre-title {
+            font-size: 1.2rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            color: var(--text-light);
+        }
+
+        h1 {
+            font-family: var(--font-title);
+            font-size: 3.5rem;
+            color: var(--text-dark); /* En el PDF los nombres se ven oscuros */
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+        }
+
+        .quote {
+            font-style: italic;
+            color: var(--text-light);
+            max-width: 80%;
+            margin: 20px auto;
+            font-size: 1rem;
+        }
+
+        /* --- MUSICA --- */
+        .music-player {
+            margin: 20px 0;
+        }
+        .music-btn {
+            background: transparent;
+            border: 2px solid var(--primary-blue);
+            color: var(--text-dark);
+            padding: 10px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .music-btn:hover {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        /* --- SECCIONES GENERALES --- */
+        section {
+            padding: 40px 20px;
+        }
+
+        h2 {
+            font-family: var(--font-title);
+            color: var(--primary-blue);
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+            border-bottom: 2px solid var(--primary-blue);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        /* --- CUENTA REGRESIVA --- */
+        .countdown-box {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .time-unit {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+            min-width: 70px;
+        }
+        .time-unit span {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: block;
+        }
+        .time-unit small {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+        }
+
+        /* --- ITINERARIO & MAPAS --- */
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        @media (max-width: 600px) {
+            .details-grid { grid-template-columns: 1fr; }
+        }
+
+        .card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid #eee;
+        }
+
+        .btn-action {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: var(--text-dark);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+
+        /* --- REGALOS --- */
+        .gift-box {
+            border: 2px dashed var(--primary-blue);
+            padding: 20px;
+            display: inline-block;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 40px 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="hero-section">
+            <img src="borde-superior.png" alt="" class="deco-border border-top">
+            
+            <img src="foto-pareja.png" alt="Stefanny y Antony" class="main-photo">
+            
+            <img src="borde-inferior.png" alt="" class="deco-border border-bottom">
+        </div>
+
+        <header class="header-text">
+            <p class="pre-title">¡Nos Casamos!</p>
+            <h1>Stefanny <br>&<br> Antony</h1>
+            
+            <div class="music-player">
+                <p style="margin-bottom: 10px; font-size: 0.9rem;">Presiona para escuchar nuestra canción</p>
+                <button class="music-btn" onclick="toggleMusic()">
+                    <i class="fas fa-play"></i> Play Música
+                </button>
+                <audio id="bgMusic" loop>
+                    <source src="cancion.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+
+            <div class="quote">
+                "El amor no consiste en mirarse el uno al otro, sino en mirar juntos en la misma dirección."
+            </div>
+        </header>
+
+        <hr style="width: 50%; margin: 0 auto; border: 0; border-top: 1px solid #ddd;">
+
+        <section>
+            <p style="margin-bottom: 20px;">Con la Bendición de Dios y nuestros padres:</p>
+            
+            <div class="details-grid">
+                <div>
+                    <h3>Padres de la Novia</h3>
+                    <p>Daniel Sánchez Canario</p>
+                    <p>Geovana Jara Fernández</p>
+                </div>
+                <div>
+                    <h3>Padres del Novio</h3>
+                    <p>Catalina Baltazar Castañeda</p>
+                    <p>Javier Garay Berrocal (†)</p>
+                </div>
+            </div>
+
+            <p style="margin-top: 40px; margin-bottom: 20px;">Y en compañía de nuestros padrinos:</p>
+            
+            <div class="details-grid">
+                <div>
+                    <h3>Religioso</h3>
+                    <p>Geovana Jara Fernández</p>
+                    <p>Juan Carlos Pingos Chuquipiondo</p>
+                </div>
+                <div>
+                    <h3>Civil</h3>
+                    <p>Geovana Jara Fernández</p>
+                    <p>Juan Carlos Pingos Chuquipiondo</p>
+                </div>
+            </div>
+        </section>
+
+        <section style="background-color: #f0f8ff;">
+            <h2>Faltan</h2>
+            <div class="countdown-box" id="countdown">
+                <div class="time-unit"><span id="days">00</span><small>Días</small></div>
+                <div class="time-unit"><span id="hours">00</span><small>Hs</small></div>
+                <div class="time-unit"><span id="minutes">00</span><small>Min</small></div>
+                <div class="time-unit"><span id="seconds">00</span><small>Seg</small></div>
+            </div>
+            <p style="margin-top: 20px; font-weight: bold;">Sábado 07 de Febrero 2025</p>
+        </section>
+
+        <section>
+            <h2>Ceremonia y Fiesta</h2>
+            
+            <div class="details-grid">
+                <div class="card">
+                    <i class="fas fa-church fa-2x" style="color: var(--primary-blue); margin-bottom:15px;"></i>
+                    <h3>Religioso</h3>
+                    <p><strong>4:00 p.m.</strong></p>
+                    <p>Parroquia San Conrado, Los Olivos</p>
+                    <a href="https://goo.gl/maps/TU_LINK_AQUI" target="_blank" class="btn-action">Ver Mapa</a>
+                </div>
+
+                <div class="card">
+                    <i class="fas fa-glass-cheers fa-2x" style="color: var(--primary-blue); margin-bottom:15px;"></i>
+                    <h3>Civil y Recepción</h3>
+                    <p><strong>6:00 p.m.</strong></p>
+                    <p>"Piscina Las Palmeras"</p>
+                    <p style="font-size: 0.9rem;">Av. Los Gallinazos 922, Puente Piedra</p>
+                    <a href="https://goo.gl/maps/TU_LINK_AQUI" target="_blank" class="btn-action">Ver Mapa</a>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="card" style="max-width: 500px; margin: 0 auto;">
+                <i class="fas fa-user-tie fa-2x" style="margin-bottom: 10px;"></i>
+                <h3>Dress Code</h3>
+                <p>Elegante</p>
+            </div>
+            <br>
+            
+            <div class="gift-box">
+                <i class="fas fa-gift fa-2x" style="color: var(--primary-blue); margin-bottom: 10px;"></i>
+                <h3>Regalos</h3>
+                <p style="font-size: 0.9rem; margin-bottom: 10px;">Tu presencia es nuestro mejor regalo, pero si deseas obsequiarnos algo:</p>
+                <p><strong>BCP:</strong> 19132797157039</p>
+                <p><strong>CCI:</strong> 00219113279715703951</p>
+            </div>
+
+            <div style="margin-top: 40px; border-top: 1px solid #eee; padding-top: 20px;">
+                <p><strong>NO NIÑOS:</strong> Amamos a los niños pero hemos reservado sitios solo para adultos.</p>
+            </div>
+        </section>
+
+        <footer>
+            <p style="margin-bottom: 20px;">Con mucha ilusión queremos vivir este momento contigo.</p>
+            <h3>Confirmar Asistencia</h3>
+            <p style="margin-bottom: 20px;">Hasta el 15 de Enero</p>
+            
+            <a href="https://wa.me/51999999999?text=Hola,%20confirmo%20mi%20asistencia" class="btn-action" style="background: #25D366; border: none; font-size: 1.1rem;">
+                <i class="fab fa-whatsapp"></i> Enviar Confirmación
+            </a>
+            
+            <h2 style="color: white; margin-top: 40px; font-size: 3rem;">Te Esperamos</h2>
+        </footer>
+
+    </div>
+
+    <script>
+        // Lógica de Cuenta Regresiva
+        const targetDate = new Date("Feb 7, 2025 16:00:00").getTime();
+        const timer = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+            document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
+            document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000);
+            if (distance < 0) { clearInterval(timer); document.getElementById("countdown").innerHTML = "¡Llegó el día!"; }
+        }, 1000);
+
+        // Lógica de Música
+        function toggleMusic() {
+            var audio = document.getElementById("bgMusic");
+            if (audio.paused) { audio.play(); } else { audio.pause(); }
+        }
+    </script>
+</body>
+</html>
