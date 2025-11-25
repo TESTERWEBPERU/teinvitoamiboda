@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stenny & Antony - Nuestra Boda</title>
+    <title>Stefanny & Antony - Nuestra Boda</title>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;600&family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         * {
@@ -17,6 +17,7 @@
             background: #f5f5f5;
             color: #2c2c2c;
             overflow-x: hidden;
+            position: relative;
         }
 
         .container {
@@ -25,6 +26,7 @@
             background: white;
             box-shadow: 0 0 30px rgba(0,0,0,0.1);
             position: relative;
+            z-index: 1;
         }
 
         /* Contenedor de corazones */
@@ -43,6 +45,8 @@
             position: absolute;
             animation: flotar linear forwards;
             pointer-events: none;
+            z-index: 9999;
+            will-change: transform;
         }
 
         @keyframes flotar {
@@ -62,7 +66,7 @@
             padding: 40px 30px;
             text-align: center;
             position: relative;
-            z-index: 2;
+            z-index: auto;
         }
 
         .flower-decoration {
@@ -160,7 +164,7 @@
             padding: 40px 30px;
             text-align: center;
             position: relative;
-            z-index: 2;
+            z-index: auto;
         }
 
         .couple-icon {
@@ -221,7 +225,7 @@
             padding: 40px 30px;
             text-align: center;
             position: relative;
-            z-index: 2;
+            z-index: auto;
         }
 
         .rings-icon {
@@ -374,7 +378,7 @@
             padding: 40px 30px;
             text-align: center;
             position: relative;
-            z-index: 2;
+            z-index: auto;
         }
 
         .dress-icon {
@@ -437,7 +441,7 @@
             padding: 40px 30px;
             text-align: center;
             position: relative;
-            z-index: 2;
+            z-index: auto;
         }
 
         .passes-title {
