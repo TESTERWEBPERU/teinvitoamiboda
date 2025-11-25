@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stenny & Antony - Nuestra Boda</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;600&family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #f5f5f5;
+            color: #2c2c2c;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 450px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 30px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        /* Contenedor de corazones */
+        .contenedor-corazones {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .corazon-float {
+            position: absolute;
+            animation: flotar linear forwards;
+            pointer-events: none;
+        }
+
+        @keyframes flotar {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Hero Section - Página 1 */
+        .hero-section {
+            background: white;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .flower-decoration {
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto 20px;
+        }
+
+        .main-title {
+            color: #7ba5c4;
+            font-size: 20px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .couple-names {
+            font-family: 'Playfair Display', serif;
+            color: #6891b3;
+            font-size: 48px;
+            font-weight: 400;
+            line-height: 1.2;
+            margin: 10px 0;
+        }
+
+        .ampersand {
+            font-size: 32px;
+            display: block;
+            margin: 5px 0;
+        }
+
+        .music-prompt {
+            font-size: 14px;
+            color: #2c2c2c;
+            margin: 20px 0 10px;
+        }
+
+        .play-button {
+            width: 50px;
+            height: 50px;
+            background: #6891b3;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+        }
+
+        .play-button:hover {
+            transform: scale(1.1);
+            background: #5a7fa0;
+        }
+
+        .play-button::after {
+            content: '▶';
+            color: white;
+            font-size: 20px;
+            margin-left: 3px;
+        }
+
+        .quote {
+            font-style: italic;
+            font-size: 13px;
+            color: #2c2c2c;
+            margin: 30px 0;
+            line-height: 1.6;
+            padding: 0 20px;
+        }
+
+        .hero-photo {
+            width: 100%;
+            height: auto;
+            margin-top: 20px;
+            overflow: hidden;
+        }
+
+        .hero-photo img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .wave-divider {
+            width: 100%;
+            margin-top: -2px;
+        }
+
+        /* Página 2 - Padres */
+        .parents-section {
+            background: white;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .couple-icon {
+            width: 100px;
+            height: auto;
+            margin: 0 auto 20px;
+            opacity: 0.6;
+        }
+
+        .section-title {
+            font-family: 'Great Vibes', cursive;
+            color: #7ba5c4;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .section-subtitle {
+            font-family: 'Great Vibes', cursive;
+            color: #7ba5c4;
+            font-size: 24px;
+            margin: 20px 0;
+        }
+
+        .parent-block {
+            margin: 30px 0;
+        }
+
+        .parent-block h3 {
+            font-size: 14px;
+            font-weight: 600;
+            color: #2c2c2c;
+            margin-bottom: 10px;
+        }
+
+        .parent-block p {
+            font-size: 14px;
+            color: #2c2c2c;
+            margin: 5px 0;
+        }
+
+        .photo-couple {
+            width: 100%;
+            height: auto;
+            margin: 30px 0;
+            overflow: hidden;
+        }
+
+        .photo-couple img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Página 3 - Evento */
+        .event-section {
+            background: white;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .rings-icon {
+            width: 80px;
+            height: auto;
+            margin: 0 auto 20px;
+            opacity: 0.5;
+        }
+
+        .invitation-text {
+            font-family: 'Great Vibes', cursive;
+            color: #7ba5c4;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .date-display {
+            margin: 30px 0;
+        }
+
+        .month-text {
+            color: #6891b3;
+            font-size: 18px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-top: 1px solid #6891b3;
+            border-bottom: 1px solid #6891b3;
+            padding: 10px 0;
+            margin-bottom: 10px;
+        }
+
+        .day-number {
+            font-size: 80px;
+            color: #6891b3;
+            font-weight: 700;
+            line-height: 1;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .year-text {
+            color: #6891b3;
+            font-size: 18px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-top: 1px solid #6891b3;
+            border-bottom: 1px solid #6891b3;
+            padding: 10px 0;
+            margin-top: 10px;
+        }
+
+        .day-name {
+            color: #6891b3;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        .countdown-title {
+            color: #6891b3;
+            font-size: 18px;
+            margin: 30px 0 20px;
+        }
+
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .countdown-item {
+            background: #6891b3;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            min-width: 70px;
+        }
+
+        .countdown-number {
+            font-size: 32px;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .countdown-label {
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        .church-icon {
+            width: 100px;
+            height: auto;
+            margin: 40px auto 20px;
+            opacity: 0.5;
+        }
+
+        .ceremony-title {
+            font-family: 'Great Vibes', cursive;
+            color: #7ba5c4;
+            font-size: 26px;
+            margin: 20px 0;
+        }
+
+        .ceremony-details {
+            font-size: 14px;
+            color: #2c2c2c;
+            line-height: 1.8;
+        }
+
+        .ceremony-details strong {
+            display: block;
+            margin-top: 10px;
+        }
+
+        .map-button {
+            display: inline-block;
+            background: #6891b3;
+            color: white;
+            padding: 12px 40px;
+            border-radius: 25px;
+            text-decoration: none;
+            margin: 20px 0;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .map-button:hover {
+            background: #5a7fa0;
+            transform: translateY(-2px);
+        }
+
+        .event-photo {
+            width: 100%;
+            height: auto;
+            margin-top: 30px;
+            overflow: hidden;
+        }
+
+        .event-photo img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Página 4 - Dress Code y Regalos */
+        .info-section {
+            background: white;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        /* Página 4 - Dress Code y Regalos */
+        .info-section2 {
+            background: white;
+            padding: 10px 10px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .dress-icon {
+            width: 100px;
+            height: auto;
+            margin: 0 auto 20px;
+            opacity: 0.6;
+        }
+        .dress-icon2 {
+            width: 100px;
+            height: auto;
+            margin: 0 auto 10%;
+            opacity: 0.6;
+        }
+
+        .dress-text {
+            font-size: 16px;
+            color: #2c2c2c;
+            font-weight: 600;
+        }
+
+        .gift-icon {
+            width: 80px;
+            height: auto;
+            margin: 40px auto 20px;
+            opacity: 0.6;
+        }
+
+        .gift-title {
+            font-family: 'Great Vibes', cursive;
+            color: #7ba5c4;
+            font-size: 28px;
+            margin: 20px 0;
+        }
+
+        .gift-text {
+            font-size: 13px;
+            color: #2c2c2c;
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+
+        .bank-details {
+            font-size: 12px;
+            color: #2c2c2c;
+            line-height: 1.8;
+        }
+
+        .info-photo {
+            width: 100%;
+            height: auto;
+            margin-top: 30px;
+            overflow: hidden;
+        }
+
+        .info-photo img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Página 5 - Pases y Confirmación */
+        .rsvp-section {
+            background: white;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .passes-title {
+            font-family: 'Great Vibes', cursive;
+            color: #7ba5c4;
+            font-size: 40px;
+            margin: 20px 0;
+        }
+
+        .passes-subtitle {
+            font-size: 14px;
+            color: #2c2c2c;
+            margin-bottom: 20px;
+        }
+
+        .passes-circles {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 10px 0;
+        }
+
+        .pass-circle {
+            width: 50px;
+            height: 50px;
+            border: 2px solid #6891b3;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: #6891b3;
+            font-weight: 800;
+        }
+
+        .passes-text {
+            font-size: 14px;
+            color: #2c2c2c;
+            margin-top: 10px;
+        }
+
+        .no-children-title {
+            font-family: 'Great Vibes', cursive;
+            color: #7ba5c4;
+            font-size: 40px;
+            margin: 40px 0 20px;
+        }
+
+        .no-children-text {
+            font-size: 13px;
+            color: #2c2c2c;
+            line-height: 1.6;
+        }
+
+        .confirm-title {
+            font-family: 'Great Vibes', cursive;
+            color: #7ba5c4;
+            font-size: 40px;
+            margin: 40px 0 20px;
+        }
+
+        .confirm-text {
+            font-size: 13px;
+            color: #2c2c2c;
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+
+        .whatsapp-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin: 30px 0;
+        }
+
+        .whatsapp-button {
+            background: #6891b3;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .whatsapp-button:hover {
+            background: #5a7fa0;
+            transform: translateY(-2px);
+        }
+
+        .final-photo {
+            width: 100%;
+            height: auto;
+            margin-top: 30px;
+            overflow: hidden;
+        }
+
+        .final-photo img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        @media (max-width: 480px) {
+            .couple-names {
+                font-size: 40px;
+            }
+
+            .day-number {
+                font-size: 60px;
+            }
+
+            .countdown-item {
+                min-width: 60px;
+                padding: 10px;
+            }
+
+            .countdown-number {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Contenedor de corazones flotantes -->
+    <div class="contenedor-corazones"></div>
+
+    <div class="container">
+        <!-- Página 1: Hero -->
+        <section class="hero-section">
+            <img src="flores-decorativas.png" alt="Flores" class="flower-decoration">
+            
+            <div class="main-title">¡NOS CASAMOS!</div>
+            
+            <div class="couple-names">
+                STEFFANY
+                <span class="ampersand">&</span>
+                ANTONY
+            </div>
+            
+            <p class="music-prompt">Presiona para escuchar nuestra canción</p>
+            <button class="play-button" onclick="reproducirMusica()"></button>
+            
+            <!-- Audio oculto -->
+            <audio id="cancion-boda" src="cancion-boda.mp3" preload="auto"></audio>
+            
+            <p class="quote">
+                "El amor no consiste en mirarse el uno al otro,<br>
+                sino en mirar juntos en la misma dirección."
+            </p>
+            
+            <div class="hero-photo">
+                <img src="foto-principal.png" alt="Steffany y Antony">
+            </div>
+            
+            <img src="wave-bottom.png" alt="" class="wave-divider">
+        </section>
+
+        <!-- Página 2: Padres y Padrinos -->
+        <section class="parents-section">
+            <img src="icono-pareja.png" alt="Pareja" class="couple-icon">
+            
+            <p class="section-title">Con la Bendición de Dios</p>
+            <p class="section-subtitle">y nuestros queridos padres</p>
+            
+            <div class="parent-block">
+                <h3>Padres de la Novia:</h3>
+                <p>Daniel Sánchez Canario</p>
+                <p>Geovana Jara Fernández</p>
+            </div>
+            
+            <div class="parent-block">
+                <h3>Padres del Novio:</h3>
+                <p>Catalina Baltazar Castañeda</p>
+                <p>Javier Garay Berrocal (†)</p>
+            </div>
+            
+            <p class="section-subtitle">Y en compañía de nuestros padrinos</p>
+            
+            <div class="parent-block">
+                <h3>Padrinos Religioso:</h3>
+                <p>Geovana Jara Fernández</p>
+                <p>Juan Carlos Pingos Chuquipiondo</p>
+            </div>
+            
+            <div class="parent-block">
+                <h3>Padrinos de Civil:</h3>
+                <p>Geovana Jara Fernández</p>
+                <p>Juan Carlos Pingos Chuquipiondo</p>
+            </div>
+            
+            <div class="photo-couple">
+                <img src="foto-pareja-2.png" alt="Steffany y Antony">
+            </div>
+            
+            <img src="NOMBRE_ICONO_ANILLO.png" alt="" class="couple-icon">
+        </section>
+
+        <!-- Página 3: Fecha y Eventos -->
+        <section class="event-section">
+            <img src="icono-anillos.png" alt="Anillos" class="rings-icon">
+            
+            <p class="invitation-text">Tenemos el agrado de invitarlos<br>a Nuestra Boda</p>
+            
+            <div class="date-display">
+                <div class="month-text">Febrero</div>
+                <div class="day-number">07</div>
+                <div class="year-text">2026</div>
+            </div>
+            
+            <div class="day-name">Sábado</div>
+            
+            <div class="countdown-title">Faltan:</div>
+            <div class="countdown-timer">
+                <div class="countdown-item">
+                    <div class="countdown-number" id="dias">00</div>
+                    <div class="countdown-label">Días</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="horas">00</div>
+                    <div class="countdown-label">Horas</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="minutos">00</div>
+                    <div class="countdown-label">Min</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="segundos">00</div>
+                    <div class="countdown-label">Seg</div>
+                </div>
+            </div>
+            
+            <img src="icono-iglesia.png" alt="Iglesia" class="church-icon">
+            
+            <div class="ceremony-title">Ceremonia Religiosa</div>
+            <div class="ceremony-details">
+                <strong>Hora: 4:00 p.m.</strong>
+                Parroquia San Conrado, Los Olivos
+            </div>
+            <a href="https://maps.app.goo.gl/EitBrFjSFjjSjrWk8" target="_blank" class="map-button">Ver ubicación</a>
+            
+            <div class="ceremony-title">Ceremonia Civil y Recepción</div>
+            <div class="ceremony-details">
+                <strong>Hora: 6:00 p.m.</strong>
+                "Piscina Las Palmeras - Puente Piedra"<br>
+                Av. Los Gallinazos 922, Puente Piedra
+            </div>
+            <a href="https://maps.app.goo.gl/ycVZkvwjw5sC6fvq6?g_st=aw" target="_blank" class="map-button">Ver ubicación</a>
+            
+            <div class="event-photo">
+                <img src="foto-evento.png" alt="Steffany y Antony">
+            </div>
+            
+            <img src="wave-bottom.png" alt="" class="wave-divider">
+        </section>
+
+        <!-- Página 4: Dress Code y Regalos -->
+        <section class="info-section">
+            <img src="icono-vestimenta.png" alt="Vestimenta" class="dress-icon">
+            <div class="dress-text">Elegante</div>
+            
+            <img src="icono-regalo.png" alt="Regalo" class="gift-icon">
+            
+            <div class="gift-title">Regalos</div>
+            <p class="gift-text">
+                Tú presencia es nuestro mejor regalo,<br>
+                pero si deseas obsequiarnos algo, te dejamos<br>
+                esta opción
+            </p>
+            
+            <div class="bank-details">
+                Nº de cuenta: 19132797157039 BCP<br>
+                interbancaria: 00219113279715703951
+            </div>
+            
+            <div class="info-photo">
+                <img src="foto-info.png" alt="Steffany y Antony">
+            </div>
+            
+            <img src="wave-bottom.png" alt="" class="wave-divider">
+        </section>
+
+        <!-- Página 5: Pases y Confirmación -->
+        <section class="rsvp-section">
+            <div class="passes-title">Pases</div>
+            <p class="passes-subtitle">Hemos reservado</p>
+            
+            <div class="passes-circles">
+                <div class="pass-circle">2</div>
+            </div>
+            
+            <p class="passes-text">Pases en tu honor</p>
+            
+            <div class="no-children-title">No niños</div>
+            <p class="no-children-text">
+                Amamos a los niños pero hemos<br>
+                reservado sitios solo para adultos.<br>
+                Niños, dulces sueños
+            </p>
+            
+            <div class="confirm-title">Confirmar tu asistencia</div>
+            <p class="confirm-text">
+                tu presencia es muy importante para nosotros<br>
+                por favor confirmarnos tu asistencia<br>
+                hasta el 15 de enero
+            </p>
+            
+            <div class="whatsapp-buttons">
+                <a href="https://wa.me/51999477717?text=Hola%20Steffany%20y%20Antony,%20confirmo%20mi%20asistencia" target="_blank" class="whatsapp-button">Confirmar</a>
+                <a href="https://wa.me/51999477717?text=Hola%20Steffany%20y%20Antony,%20lamentablemente%20no%20podré%20asistir" target="_blank" class="whatsapp-button">No asistiré</a>
+            </div>
+            
+            <div class="final-photo">
+                <img src="foto-final.png" alt="Steffany y Antony">
+            </div>
+        </section>
+    
+        <section class="info-section2">
+            <img src="sya.png" alt="Vestimenta" class="dress-icon2">
+            <p class="gift-text">
+                Con mucha ilusión queremos vivir este
+                momento rodeados de personas que han
+                formado parte de nuestra historia.
+                Será un honor contar con tu presencia
+            </p>
+            <div class="main-title">¡TE ESPERAMOS!</div>                                   
+            <img src="wave-bottom.png" alt="" class="wave-divider">
+        </section>
+    </div>
+
+    <script>
+        // Reproducir música
+        let audioReproduciendo = false;
+        const audio = document.getElementById('cancion-boda');
+        
+        function reproducirMusica() {
+            if (!audioReproduciendo) {
+                audio.play();
+                audioReproduciendo = true;
+                document.querySelector('.play-button').style.background = '#5a7fa0';
+            } else {
+                audio.pause();
+                audioReproduciendo = false;
+                document.querySelector('.play-button').style.background = '#6891b3';
+            }
+        }
+        
+        // Contador regresivo CORREGIDO
+        const fechaEvento = new Date('2026-02-07T16:00:00-05:00').getTime();
+        
+        function actualizarContador() {
+            var ahora = new Date().getTime();
+            var distancia = fechaEvento - ahora;
+            
+            if (distancia > 0) {
+                var dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+                var horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+                var segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+                
+                document.getElementById("dias").innerHTML = dias;
+                document.getElementById("horas").innerHTML = horas;
+                document.getElementById("minutos").innerHTML = minutos;
+                document.getElementById("segundos").innerHTML = segundos;
+            } else {
+                document.getElementById("dias").innerHTML = "0";
+                document.getElementById("horas").innerHTML = "0";
+                document.getElementById("minutos").innerHTML = "0";
+                document.getElementById("segundos").innerHTML = "0";
+                document.querySelector(".countdown-title").innerHTML = "¡Llegó el gran día!";
+            }
+        }
+        
+        actualizarContador();
+        setInterval(actualizarContador, 1000);
+
+        // Efecto de corazones flotantes
+        const contenedor = document.querySelector('.contenedor-corazones');
+        
+        function random(min, max) { 
+            return Math.random() * (max - min) + min; 
+        }
+        
+        function crearCorazon() {
+            const corazon = document.createElement('img');
+            corazon.className = 'corazon-float';
+            corazon.src = 'NOMBRE_ICONO_CORAZON.png'; // Reemplaza con tu imagen PNG/SVG de corazón
+            corazon.style.left = random(2, 97) + 'vw';
+            corazon.style.top = (window.scrollY + window.innerHeight - 40) + 'px';
+            corazon.style.width = corazon.style.height = random(22, 38) + 'px';
+            corazon.style.animationDuration = random(7, 12) + 's';
+            corazon.style.opacity = random(0.55, 0.85);
+            contenedor.appendChild(corazon);
+            
+            setTimeout(() => corazon.remove(), 14000);
+        }
+        
+        setInterval(crearCorazon, 850);
+    </script>
+</body>
+</html>
