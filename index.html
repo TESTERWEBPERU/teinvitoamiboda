@@ -17,7 +17,6 @@
             background: #f5f5f5;
             color: #2c2c2c;
             overflow-x: hidden;
-            position: relative;
         }
 
         .container {
@@ -27,6 +26,13 @@
             box-shadow: 0 0 30px rgba(0,0,0,0.1);
             position: relative;
             z-index: 1;
+        }
+        @font-face {
+        font-family: 'MiFuente';
+        /* Asegúrate de que la ruta 'url()' sea correcta respecto a tu archivo CSS */
+        src: url('fuente.ttf') format('truetype'); /* Cambiado 'ttf' por 'truetype' */
+        font-weight: normal;
+        font-style: normal;
         }
 
         /* Contenedor de corazones */
@@ -46,7 +52,6 @@
             animation: flotar linear forwards;
             pointer-events: none;
             z-index: 9999;
-            will-change: transform;
         }
 
         @keyframes flotar {
@@ -66,7 +71,7 @@
             padding: 40px 30px;
             text-align: center;
             position: relative;
-            z-index: auto;
+            z-index: 2;
         }
 
         .flower-decoration {
@@ -84,9 +89,9 @@
         }
 
         .couple-names {
-            font-family: 'Playfair Display', serif;
+            font-family: 'MiFuente', sans-serif;
             color: #6891b3;
-            font-size: 48px;
+            font-size: 60px;
             font-weight: 400;
             line-height: 1.2;
             margin: 10px 0;
@@ -143,7 +148,6 @@
             width: 100%;
             height: auto;
             margin-top: 20px;
-            border-radius: 0 0 50% 50%;
             overflow: hidden;
         }
 
@@ -164,27 +168,27 @@
             padding: 40px 30px;
             text-align: center;
             position: relative;
-            z-index: auto;
+            z-index: 2;
         }
 
         .couple-icon {
             width: 100px;
             height: auto;
-            margin: 0 auto 20px;
+            margin: 0 auto 0px;
             opacity: 0.6;
         }
 
         .section-title {
             font-family: 'Great Vibes', cursive;
             color: #7ba5c4;
-            font-size: 28px;
+            font-size: 35px;
             margin-bottom: 10px;
         }
 
         .section-subtitle {
             font-family: 'Great Vibes', cursive;
             color: #7ba5c4;
-            font-size: 24px;
+            font-size: 35px;
             margin: 20px 0;
         }
 
@@ -209,7 +213,6 @@
             width: 100%;
             height: auto;
             margin: 30px 0;
-            border-radius: 50% 50% 50% 50% / 20% 20% 20% 20%;
             overflow: hidden;
         }
 
@@ -222,10 +225,10 @@
         /* Página 3 - Evento */
         .event-section {
             background: white;
-            padding: 40px 30px;
+            padding: 1px 30px;
             text-align: center;
             position: relative;
-            z-index: auto;
+            z-index: 2;
         }
 
         .rings-icon {
@@ -238,7 +241,7 @@
         .invitation-text {
             font-family: 'Great Vibes', cursive;
             color: #7ba5c4;
-            font-size: 24px;
+            font-size: 35px;
             margin-bottom: 20px;
         }
 
@@ -326,7 +329,7 @@
         .ceremony-title {
             font-family: 'Great Vibes', cursive;
             color: #7ba5c4;
-            font-size: 26px;
+            font-size: 35px;
             margin: 20px 0;
         }
 
@@ -362,7 +365,6 @@
             width: 100%;
             height: auto;
             margin-top: 30px;
-            border-radius: 50% 50% 0 0;
             overflow: hidden;
         }
 
@@ -378,13 +380,27 @@
             padding: 40px 30px;
             text-align: center;
             position: relative;
-            z-index: auto;
+            z-index: 2;
+        }
+        /* Página 4 - Dress Code y Regalos */
+        .info-section2 {
+            background: white;
+            padding: 10px 10px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
         }
 
         .dress-icon {
             width: 100px;
             height: auto;
             margin: 0 auto 20px;
+            opacity: 0.6;
+        }
+        .dress-icon2 {
+            width: 100px;
+            height: auto;
+            margin: 0 auto 10%;
             opacity: 0.6;
         }
 
@@ -405,7 +421,7 @@
             font-family: 'Great Vibes', cursive;
             color: #7ba5c4;
             font-size: 28px;
-            margin: 20px 0;
+            margin: 1px 0;
         }
 
         .gift-text {
@@ -425,7 +441,6 @@
             width: 100%;
             height: auto;
             margin-top: 30px;
-            border-radius: 50% 50% 50% 50% / 30% 30% 20% 20%;
             overflow: hidden;
         }
 
@@ -441,13 +456,13 @@
             padding: 40px 30px;
             text-align: center;
             position: relative;
-            z-index: auto;
+            z-index: 2;
         }
 
         .passes-title {
             font-family: 'Great Vibes', cursive;
             color: #7ba5c4;
-            font-size: 28px;
+            font-size: 40px;
             margin: 20px 0;
         }
 
@@ -460,22 +475,21 @@
         .passes-circles {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            margin: 30px 0;
+            gap: 10px;
+            margin: 10px 0;
         }
 
         .pass-circle {
-            width: 60px;
-            height: 60px;
-            background: #6891b3;
-            border: none;
+            width: 50px;
+            height: 50px;
+            border: 2px solid #6891b3;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
-            color: white;
-            font-weight: 700;
+            font-size: 40px;
+            color: #6891b3;
+            font-weight: 800;
         }
 
         .passes-text {
@@ -487,7 +501,7 @@
         .no-children-title {
             font-family: 'Great Vibes', cursive;
             color: #7ba5c4;
-            font-size: 28px;
+            font-size: 40px;
             margin: 40px 0 20px;
         }
 
@@ -500,7 +514,7 @@
         .confirm-title {
             font-family: 'Great Vibes', cursive;
             color: #7ba5c4;
-            font-size: 28px;
+            font-size: 40px;
             margin: 40px 0 20px;
         }
 
@@ -537,7 +551,6 @@
             width: 100%;
             height: auto;
             margin-top: 30px;
-            border-radius: 50% 50% 0 0;
             overflow: hidden;
         }
 
@@ -579,9 +592,9 @@
             <div class="main-title">¡NOS CASAMOS!</div>
             
             <div class="couple-names">
-                STEFFANY
+                Steffany
                 <span class="ampersand">&</span>
-                ANTONY
+                Antony
             </div>
             
             <p class="music-prompt">Presiona para escuchar nuestra canción</p>
@@ -623,16 +636,11 @@
             
             <p class="section-subtitle">Y en compañía de nuestros padrinos</p>
             
+                       
             <div class="parent-block">
-                <h3>Padrinos Religioso:</h3>
+                <h3>Padrinos:</h3>
                 <p>Geovana Jara Fernández</p>
-                <p>Juan Carlos Pingos Chuquipiondo</p>
-            </div>
-            
-            <div class="parent-block">
-                <h3>Padrinos de Civil:</h3>
-                <p>Geovana Jara Fernández</p>
-                <p>Juan Carlos Pingos Chuquipiondo</p>
+                <p>Juan Carlos Pingus Chuquipiondo</p>
             </div>
             
             <div class="photo-couple">
@@ -644,14 +652,13 @@
 
         <!-- Página 3: Fecha y Eventos -->
         <section class="event-section">
-            <img src="icono-anillos.png" alt="Anillos" class="rings-icon">
-            
+                        
             <p class="invitation-text">Tenemos el agrado de invitarlos<br>a Nuestra Boda</p>
             
             <div class="date-display">
                 <div class="month-text">Febrero</div>
                 <div class="day-number">07</div>
-                <div class="year-text">2025</div>
+                <div class="year-text">2026</div>
             </div>
             
             <div class="day-name">Sábado</div>
@@ -683,7 +690,7 @@
                 <strong>Hora: 4:00 p.m.</strong>
                 Parroquia San Conrado, Los Olivos
             </div>
-            <a href="https://maps.google.com/?q=Parroquia+San+Conrado+Los+Olivos" target="_blank" class="map-button">Ver ubicación</a>
+            <a href="https://maps.app.goo.gl/EitBrFjSFjjSjrWk8" target="_blank" class="map-button">Ver ubicación</a>
             
             <div class="ceremony-title">Ceremonia Civil y Recepción</div>
             <div class="ceremony-details">
@@ -691,7 +698,7 @@
                 "Piscina Las Palmeras - Puente Piedra"<br>
                 Av. Los Gallinazos 922, Puente Piedra
             </div>
-            <a href="https://maps.google.com/?q=Av.+Los+Gallinazos+922,+Puente+Piedra" target="_blank" class="map-button">Ver ubicación</a>
+            <a href="https://maps.app.goo.gl/ycVZkvwjw5sC6fvq6?g_st=aw" target="_blank" class="map-button">Ver ubicación</a>
             
             <div class="event-photo">
                 <img src="foto-evento.png" alt="Steffany y Antony">
@@ -703,7 +710,7 @@
         <!-- Página 4: Dress Code y Regalos -->
         <section class="info-section">
             <img src="icono-vestimenta.png" alt="Vestimenta" class="dress-icon">
-            <div class="dress-text">Elegante</div>
+            <div class="gift-title">Elegante</div>
             
             <img src="icono-regalo.png" alt="Regalo" class="gift-icon">
             
@@ -731,9 +738,8 @@
             <div class="passes-title">Pases</div>
             <p class="passes-subtitle">Hemos reservado</p>
             
-            <!-- CAMBIA ESTE NÚMERO (1, 2 o 3) PARA PERSONALIZAR LOS PASES -->
-            <div class="passes-circles" id="passes-container">
-                <!-- Los círculos se generan automáticamente según numPases -->
+            <div class="passes-circles">
+                <div class="pass-circle">1</div>
             </div>
             
             <p class="passes-text">Pases en tu honor</p>
@@ -753,31 +759,29 @@
             </p>
             
             <div class="whatsapp-buttons">
-                <a href="https://wa.me/51999999999?text=Hola%20Steffany%20y%20Antony,%20confirmo%20mi%20asistencia" target="_blank" class="whatsapp-button">Confirmar</a>
-                <a href="https://wa.me/51999999999?text=Hola%20Steffany%20y%20Antony,%20lamentablemente%20no%20podré%20asistir" target="_blank" class="whatsapp-button">No asistiré</a>
+                <a href="https://wa.me/51999477717?text=Hola%20Steffany%20y%20Antony,%20confirmo%20mi%20asistencia" target="_blank" class="whatsapp-button">Confirmar</a>
+                <a href="https://wa.me/51999477717?text=Hola%20Steffany%20y%20Antony,%20lamentablemente%20no%20podré%20asistir" target="_blank" class="whatsapp-button">No asistiré</a>
             </div>
             
             <div class="final-photo">
                 <img src="foto-final.png" alt="Steffany y Antony">
             </div>
         </section>
+    
+        <section class="info-section2">
+            <img src="sya.png" alt="Vestimenta" class="dress-icon2">
+            <p class="gift-text">
+                Con mucha ilusión queremos vivir este
+                momento rodeados de personas que han
+                formado parte de nuestra historia.
+                Será un honor contar con tu presencia
+            </p>
+            <div class="main-title">¡TE ESPERAMOS!</div>                                   
+            <img src="wave-bottom.png" alt="" class="wave-divider">
+        </section>
     </div>
 
     <script>
-        // ===== CONFIGURA EL NÚMERO DE PASES AQUÍ =====
-        // Cambia este número para cada versión: 1, 2 o 3
-        const numPases = 3; // <-- CAMBIA ESTE NÚMERO
-        // =============================================
-        
-        // Generar círculos de pases dinámicamente
-        const passesContainer = document.getElementById('passes-container');
-        for (let i = 1; i <= numPases; i++) {
-            const circle = document.createElement('div');
-            circle.className = 'pass-circle';
-            circle.textContent = i;
-            passesContainer.appendChild(circle);
-        }
-        
         // Reproducir música
         let audioReproduciendo = false;
         const audio = document.getElementById('cancion-boda');
@@ -795,7 +799,7 @@
         }
         
         // Contador regresivo CORREGIDO
-        const fechaEvento = new Date('2025-02-07T16:00:00-05:00').getTime();
+        const fechaEvento = new Date('2026-02-07T16:00:00-05:00').getTime();
         
         function actualizarContador() {
             var ahora = new Date().getTime();
